@@ -48,7 +48,7 @@ jobs:
       
     - name: save helm chart to local registry
       run: |
-       helm chart save ./mgkcloud-helm01-api-0.1.0.tgz sidlabacr03.azurecr.io/charts-mgkcloud-helm01-api:latest
+       helm chart save ./mgkcloud-helm01-api-0.1.0.tgz barclaysacr02.azurecr.io/charts-mgkcloud-helm01-api:latest
        
     - name: Helm chart Push
       run: helm chart push barclaysacr02.azurecr.io/charts-mgkcloud-helm01-api:latest
