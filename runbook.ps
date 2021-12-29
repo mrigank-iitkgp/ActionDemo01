@@ -6,7 +6,7 @@ export HELM_EXPERIMENTAL_OCI=1
 
 //package helm chart
 helm package <path of helm chart>
-helm package ./helm/actiondemo01-api
+helm package ./helm/mgkcloud-helm01-api
 
 
 //acr login through helm
@@ -16,16 +16,16 @@ helm registry login barclaysacr02.azurecr.io
 
 //tag helm chart with acr name
 helm chart save <helm package tgz file path> <acr login server name / chart name>
-helm chart save ./actiondemo01-api-0.1.0.tgz barclaysacr02.azurecr.io/charts-actiondemo01-api:latest
+helm chart save ./actiondemo01-api-0.1.0.tgz barclaysacr02.azurecr.io/charts-mgkcloud-helm01-api:latest
 
 
 //push helm chart to acr
 helm chart push <tagged helm chart name>
-helm chart push barclaysacr02.azurecr.io/charts-actiondemo01-api:latest
+helm chart push barclaysacr02.azurecr.io/charts-mgkcloud-helm01-api:latest
 
 //helm install or upgrade
 helm upgrade --namespace <ns-name> --install --set image.tag=<img-tag> <release-name> <chart-name>
-helm upgrade --namespace ns-qa --install --set image.tag=latest actiondemo01-api actiondemo01-api
+helm upgrade --namespace ns-qa --install --set image.tag=latest mgkcloud-helm01-api mgkcloud-helm01-api
 
 
 
