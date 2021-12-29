@@ -2,7 +2,7 @@ replicaCount: 2
 k8s:
   namespace: "default"
 app:
-  name: "actiondemo01-api"
+  name: "mgkCloud-helm01-api"
 service:
   port: "5000"
 metrics:
@@ -14,12 +14,12 @@ memory:
   target: "413Mi"
   #This is 85% of the memory limit set.
 pv:
-  name: "actiondemo01sc"
+  name: "mgkCloud-helm01sc"
 pvc:
-  name: "actiondemo01pvc"
+  name: "mgkCloud-helm01pvc"
 
 image:
-  repository: "barclaysacr02.azurecr.io/actiondemo01"
+  repository: "barclaysacr02.azurecr.io/mgkCloud-helm01"
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 imagePullSecrets:
