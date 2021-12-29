@@ -1,4 +1,4 @@
-apiVersion: v2
+apiVersion: latest
 name: "mgkcloud-helm01-api"
 description: A Helm chart for Kubernetes
 
